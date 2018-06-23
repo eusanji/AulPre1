@@ -12,10 +12,10 @@ namespace ConsoleView
     {
         static void Main(string[] args)
         {
-          
+            /**  Inserir alunos
             //Criando objeto
             AlunosController alunosController = new AlunosController();
-            
+
             //Cadastrar alunos
             Aluno a = CadastraAluno();
             alunosController.Inserir(a);
@@ -26,13 +26,48 @@ namespace ConsoleView
             Aluno c = CadastraAluno();
             alunosController.Inserir(c);
 
-            foreach(Aluno aluno in alunosController.ListarTodos())
+            foreach (Aluno aluno in alunosController.ListarTodos())
             {
                 ImprimirDadosAluno(aluno);
             }
 
 
             Console.ReadKey();
+            **/
+
+            //Inserir Professor
+
+            ProfessoresController pC = new ProfessoresController();
+
+            Professor d = CadastrarProfessor();
+            pC.InserirProf(d);
+
+            Professor e = CadastrarProfessor();
+            pC.InserirProf(e);
+
+            foreach(Professor p in pC.ListarTodosProfessor())
+            {
+                ImprimirDadoProfessor(p);
+            }
+             
+        }
+
+        private static void ImprimirDadoProfessor(Professor p)
+        {
+            Console.WriteLine("Professor: " + p.NomeP);
+            Console.WriteLine("Matricula do Professor" + p.MatriculaP);
+        }
+
+        private static Professor CadastrarProfessor()
+        {
+            Professor p = new Professor();
+
+            Console.WriteLine("Digite o nome do professor");
+            p.NomeP = Console.ReadLine();
+
+            Console.WriteLine("Digite a matricula do professor");
+            p.MatriculaP = int.Parse(Console.ReadLine());
+            return p;
         }
 
         private static void ImprimirDadosAluno(Aluno a)
