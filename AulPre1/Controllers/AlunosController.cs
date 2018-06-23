@@ -11,7 +11,7 @@ namespace Controllers
     {
         List<Aluno> tabelaAlunos = new List<Aluno>();
 
-        public  void Inserir(Aluno a)
+        public void Inserir(Aluno a)
         {
             tabelaAlunos.Add(a);
         }
