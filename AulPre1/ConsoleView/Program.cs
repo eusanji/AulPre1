@@ -36,7 +36,7 @@ namespace ConsoleView
             **/
 
             //Inserir Professor
-
+            //Criando objeto
             ProfessoresController pC = new ProfessoresController();
 
             Professor d = CadastrarProfessor();
@@ -48,24 +48,25 @@ namespace ConsoleView
             foreach(Professor p in pC.ListarTodosProfessor())
             {
                 ImprimirDadoProfessor(p);
+
             }
-             
+            Console.ReadKey();
         }
 
         private static void ImprimirDadoProfessor(Professor p)
         {
-            Console.WriteLine("Professor: " + p.NomeP);
-            Console.WriteLine("Matricula do Professor" + p.MatriculaP);
+            Console.WriteLine("Professor : " + p.NomeP);
+            Console.WriteLine("Matricula do Professor : " + p.MatriculaP);
         }
 
         private static Professor CadastrarProfessor()
         {
             Professor p = new Professor();
 
-            Console.WriteLine("Digite o nome do professor");
+            Console.Write("Digite o nome do professor: ");
             p.NomeP = Console.ReadLine();
 
-            Console.WriteLine("Digite a matricula do professor");
+            Console.Write("Digite a matricula do professor: ");
             p.MatriculaP = int.Parse(Console.ReadLine());
             return p;
         }
@@ -73,17 +74,17 @@ namespace ConsoleView
         private static void ImprimirDadosAluno(Aluno a)
         {
             Console.WriteLine("Aluno: " + a.Nome);//get
-            Console.WriteLine("Matricula: " + a.Matricula);//get
+            Console.WriteLine("Matricula : " + a.Matricula);//get
         }
 
         private static Aluno CadastraAluno()
         {
             Aluno a = new Aluno();
             
-            Console.WriteLine("Digite o aluno");
+            Console.Write("Digite o aluno : ");
             a.Nome = Console.ReadLine();//set
 
-            Console.WriteLine("Digite a matricula");
+            Console.Write("Digite a matricula: ");
             a.Matricula = int.Parse(Console.ReadLine());//set
             return a;
         }
