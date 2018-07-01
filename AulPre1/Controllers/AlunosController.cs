@@ -18,6 +18,11 @@ namespace Controllers
         public List<Aluno> ListarTodos()
         {
             return tabelaAlunos;
+        
+        }
+        public void Delete(Aluno a)
+        {
+            tabelaAlunos.Remove(a);
         }
     }
     
