@@ -19,7 +19,10 @@ namespace Controllers
         {
             return tabelaProfessores;
         }
+        public void Delete(Professor p)
+        {
+            tabelaProfessores.Remove(p);
+        }
 
-       
     }
 }

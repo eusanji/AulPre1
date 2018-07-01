@@ -42,9 +42,9 @@ namespace ConsoleView
                     case 3:
                         Console.Clear();
                         Console.WriteLine("\n Lista de Professores");
-                        foreach (Professor professor in professoresController.ListarTodos())
+                        foreach (Professor p in professoresController.ListarTodos())
                         {
-                            ImprimirDadoProfessor(professor);
+                            ImprimirDadoProfessor(p);
                         }
                         Console.WriteLine("\nAperte 'Enter' Para Voltar ao Menu!");
                         break;
@@ -63,12 +63,12 @@ namespace ConsoleView
 
             } while (opcao != 0);
 
-            foreach (Aluno aluno in alunoscontroller.ListarTodos())
+            foreach (Aluno aluno in alunosController.ListarTodos())
             {
-                ImprimirDados(aluno);
+                ImprimirDadosAluno(aluno);
             }
 
-            
+            /**
             //Criando objeto
             AlunosController alunosController = new AlunosController();
 
