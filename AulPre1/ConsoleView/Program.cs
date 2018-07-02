@@ -5,31 +5,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 
 namespace ConsoleView
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {       
+             //Criando usuario
+            Console.WriteLine("-----------------Aluno-----------------------");
+            AlunosController alunosController = new AlunosController();
+            Aluno a = CadastraAluno();
+            alunosController.Inserir(a);
+             
+            //Criando objeto
+            ProfessoresController pC = new ProfessoresController();
+            Console.WriteLine("----------------Professor--------------");
+            Professor b = CadastrarProfessor();
+            pC.InserirProf(b);
+            
+            //Inserir disciplina
+            DisciplinaController dC = new DisciplinaController();
+            Console.WriteLine("----------------Disciplina--------------");
+            Disciplina c = CadastrarDisciplina();
+            dC.Inserird(c);
+           // Console.ReadKey();
+            
             int opcao;
             do
             {
-                Console.WriteLine("EEscola uma opção");
-                Console.WriteLine("1 - Deletar o Aluno", a);
-                Console.WriteLine("2 - Para listar 'Alunos'");
-                Console.WriteLine("3 - Para listar 'Professores'");
-                Console.WriteLine("4- Para listar 'Disciplinas'");
+                Console.WriteLine("Escolha uma opção");
+                Console.WriteLine("1 - Para listar 'Alunos'");
+                Console.WriteLine("2 - Para listar 'Professores'");
+                Console.WriteLine("3 - Para listar 'Disciplinas'");
+                Console.WriteLine("4 - Deletar o Aluno", a);
+                Console.WriteLine("5 - Deletar um professor", b);
+                Console.WriteLine("6 - Deletar uma disciplina", c);
                 Console.WriteLine("0 - Para Finalizar");
-                Console.WriteLine("Digite a opção que deseja: ");
+                Console.Write("Digite uma opção e tecle Enter: ");
                 opcao = Int32.Parse(Console.ReadLine());
                 switch (opcao)
                 {
                     case 1:
-                        AlunosController.Delete(a);
-                        break;
-                    case 2:
                         Console.Clear();
                         Console.WriteLine("Lista de Alunos");
                         Console.WriteLine("");
@@ -37,109 +54,71 @@ namespace ConsoleView
                         {
                             ImprimirDadosAluno(aluno);
                         }
-                        Console.WriteLine("\nAperte 'Enter' Para Voltar ao Menu!");
+                        Console.WriteLine("\n Aperte 'Enter' Para Voltar ao Menu!");
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("Lista de Professores");
+                        Console.WriteLine("");
+                        foreach (Professor p in pC.ListarTodosProfessor())
+                        {
+                            ImprimirDadoProfessor(p);
+                        }
+                        Console.WriteLine("\n Aperte 'Enter' Para Voltar ao Menu!");
                         break;
                     case 3:
                         Console.Clear();
-                        Console.WriteLine("\n Lista de Professores");
-                        foreach (Professor p in professoresController.ListarTodos())
+                        Console.WriteLine("Lista de Disciplina");
+                        Console.WriteLine("");
+                        foreach (Disciplina disciplina in dC.ListarDisciplinas())
                         {
-                            ImprimirDadoProfessor(p);
+                            ImprimirDisciplinas(disciplina);
                         }
                         Console.WriteLine("\nAperte 'Enter' Para Voltar ao Menu!");
                         break;
                     case 4:
-                        Console.Clear();
-                        Console.WriteLine("\n Lista de Disciplina");
-                        foreach (Disciplina disciplina in disciplinaController.ListarDisciplinas())
-                        {
-                            ImprimirDisciplinas (disciplina);
-                        }
-                        Console.WriteLine("\nAperte 'Enter' Para Voltar ao Menu!");
+
+                        alunosController.Delete(a);
+                        Console.WriteLine("Aluno excluido com sucesso tecle Enter para voltar ao menu");
+                        break;
+                    case 5:
+                        pC.Delete(b);
+                        Console.WriteLine("Professor excluido com sucesso tecle Enter para voltar ao menu");
+                        break;
+                    case 6:
+                        dC.Delete(c);
+                        Console.WriteLine("Disciplina excluido com sucesso tecle Enter para voltar ao menu");
                         break;
                 }
+                
                 Console.ReadKey();
                 Console.Clear();
 
             } while (opcao != 0);
-
-            foreach (Aluno aluno in alunosController.ListarTodos())
-            {
-                ImprimirDadosAluno(aluno);
-            }
-
-            /**
-            //Criando objeto
-            AlunosController alunosController = new AlunosController();
-
-            //Cadastrar alunos
-            Aluno a = CadastraAluno();
-            alunosController.Inserir(a);
-
-            foreach (Aluno aluno in alunosController.ListarTodos())
-            {
-                ImprimirDadosAluno(aluno);
-            }
-            
-            Console.ReadKey();
-            **/
-
-            /**
-            
-            //Inserir Professor
-            //Criando objeto
-            ProfessoresController pC = new ProfessoresController();
-
-            Professor b = CadastrarProfessor();
-            pC.InserirProf(b);
-
-            foreach(Professor p in pC.ListarTodosProfessor())
-            {
-                ImprimirDadoProfessor(p);
-
-            }
-            Console.ReadKey();
-            
-            //Inserir disciplina
-            DisciplinaController dC = new DisciplinaController();
-
-            Disciplina c = CadastrarDisciplina();
-            dC.Inserird(c);
-
-            foreach(Disciplina d in dC.ListarDisciplinas())
-            {
-                ImprimirDisciplinas(d);
-            }
-            Console.ReadKey();
-          **/
+                        
         }
 
         private static void ImprimirDisciplinas(Disciplina d)
         {
             Console.WriteLine("Disciplina : " + d.NomeD);
             Console.WriteLine("Carga Horaria : " + d.CargaHoraria);
-            
-
         }
-
         private static Disciplina CadastrarDisciplina()
         {
             Disciplina f = new Disciplina();
 
-            Console.WriteLine("Digite a descrição da disciplina");
+            Console.Write("Digite a descrição da disciplina: ");
             f.NomeD = Console.ReadLine();
 
-            Console.WriteLine("Digte a carga horaria da disciplina");
+            Console.Write("Digte a carga horaria da disciplina: ");
             f.CargaHoraria = int.Parse(Console.ReadLine());
             return f;
         }
-
         private static void ImprimirDadoProfessor(Professor p)
         {
             Console.WriteLine("Professor : " + p.NomeP);
             Console.WriteLine("Matricula do Professor : " + p.MatriculaP);
         }
-
         private static Professor CadastrarProfessor()
         {
             Professor p = new Professor();
@@ -151,20 +130,15 @@ namespace ConsoleView
             p.MatriculaP = int.Parse(Console.ReadLine());
             return p;
         }
-
         private static void ImprimirDadosAluno(Aluno a)
         {
             Console.WriteLine("Aluno: " + a.Nome);//get
             Console.WriteLine("Matricula : " + a.Matricula);//get
         }
-
-        public static Aluno CadastraAluno(string Nome, int Matricula)
+        public static Aluno CadastraAluno()
         {
             Aluno a = new Aluno();
-            var aluno = a.alunos.Create();
-
-
-            
+                        
             Console.Write("Digite o aluno : ");
             a.Nome = Console.ReadLine();//set
 
