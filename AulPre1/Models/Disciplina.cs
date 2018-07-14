@@ -1,8 +1,12 @@
-﻿namespace Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Models
 {
     public class Disciplina
     {
-        //Criando atributos da classe.
+       [Key]
+        public int DisciplinaID { get; set; }
+        private string nomed;
         public string NomeD { get; set; }
 
         public int CargaHoraria { get; set; }

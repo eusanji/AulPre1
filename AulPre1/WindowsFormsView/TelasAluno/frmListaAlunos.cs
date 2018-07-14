@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsView.TelasAluno
 {
-    public partial class formListaAlunos : Form
+    public partial class frmListaAlunos : Form
     {
-        public formListaAlunos()
+        public frmListaAlunos()
         {
             InitializeComponent();
         }

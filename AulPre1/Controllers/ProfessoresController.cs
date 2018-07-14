@@ -1,28 +1,45 @@
-﻿using Models;
-using System;
+﻿using Controllers.DAL;
+using Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Controllers
 {
-             public class ProfessoresController
+    public class ProfessoresController
     {
-        List<Professor> tabelaProfessores = new List<Professor>();
+        Contexto contextoP = new Contexto();
 
-        public void InserirProf(Professor p)
+        public void InserirProf(Professor novoProf)
         {
-            tabelaProfessores.Add(p);
+            contextoP.Professores.Add(novoProf);
+            contextoP.SaveChanges();
         }
         public List<Professor> ListarTodosProfessor()
         {
-            return tabelaProfessores;
+            return contextoP.Professores.ToList();
         }
-        public void Delete(Professor p)
+        public Professor BuscarMatriculaProfessor(int matricula)
+                {
+            var professor = from a in contextoP.Professores
+                        where a.MatriculaP == matricula
+                        select a;
+            return (Professor)professor;
+        }
+        public Professor BuscarProfID(int idProfessor)
         {
-            tabelaProfessores.Remove(p);
+            return contextoP.Professores.Find(idProfessor);
         }
-
+        public void AtualizarP(Professor professor)
+        {
+            contextoP.Entry(professor).State = System.Data.Entity.EntityState.Modified;
+            contextoP.SaveChanges();
+        }
+            public void ExcluirP(int idProfessor)
+        {
+            Professor professor = BuscarProfID(idProfessor);
+            contextoP.Professores.Remove(professor);
+            contextoP.SaveChanges();
+        }
+        
     }
 }

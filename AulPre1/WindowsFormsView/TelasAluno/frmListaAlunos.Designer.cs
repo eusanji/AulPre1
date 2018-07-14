@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsView.TelasAluno
 {
-    partial class formListaAlunos
+    partial class frmListaAlunos
     {
         /// <summary>
         /// Required designer variable.

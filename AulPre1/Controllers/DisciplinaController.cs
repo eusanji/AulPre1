@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Controllers.DAL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,31 @@ namespace Controllers
 {
     public class DisciplinaController
     {
-        List<Disciplina> tabelaDisciplinas = new List<Disciplina>();
+        Contexto contextoD = new Contexto();
 
-        public void Inserird(Disciplina d)
+        public void InserirDisci(Disciplina nd)
         {
-            tabelaDisciplinas.Add(d);
+            contextoD.Disciplinas.Add(nd);
+            contextoD.SaveChanges();  
         }
         public List<Disciplina> ListarDisciplinas()
         {
-            return tabelaDisciplinas;
+            return contextoD.Disciplinas.ToList();
         }
-        public void Delete(Disciplina d)
+        public Disciplina BuscarDiscID(int iddisciplina)
         {
-            tabelaDisciplinas.Remove(d);
+            return contextoD.Disciplinas.Find(iddisciplina);
+        }
+        public void AtualizarD(Disciplina disciplina)
+        {
+            contextoD.Entry(disciplina).State = System.Data.Entity.EntityState.Modified;
+            contextoD.SaveChanges();
+        }
+            public void ExcluirD(int iddisciplina)
+        {
+            Disciplina disciplina = BuscarDiscID(iddisciplina);
+            contextoD.Disciplinas.Remove(disciplina);
+            contextoD.SaveChanges();
         }
 
     }

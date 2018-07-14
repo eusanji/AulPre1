@@ -55,17 +55,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TelasAluno\formListaAlunos.cs">
+    <Compile Include="TelasAluno\frmDeletar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelasAluno\formListaAlunos.Designer.cs">
-      <DependentUpon>formListaAlunos.cs</DependentUpon>
+    <Compile Include="TelasAluno\frmDeletar.Designer.cs">
+      <DependentUpon>frmDeletar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasAluno\frmListaAlunos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasAluno\frmListaAlunos.Designer.cs">
+      <DependentUpon>frmListaAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasAluno\frmAtualizarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasAluno\frmAtualizarAluno.Designer.cs">
+      <DependentUpon>frmAtualizarAluno.cs</DependentUpon>
     </Compile>
     <Compile Include="TelasAluno\frmCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelasAluno\frmCadastroAluno.Designer.cs">
       <DependentUpon>frmCadastroAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasDisciplina\frmAtualizarDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasDisciplina\frmAtualizarDisciplina.Designer.cs">
+      <DependentUpon>frmAtualizarDisciplina.cs</DependentUpon>
     </Compile>
     <Compile Include="TelasDisciplina\frmCadastroDisciplina.cs">
       <SubType>Form</SubType>
@@ -97,6 +115,24 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelasDisciplina\frmDeletarDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasDisciplina\frmDeletarDisciplina.Designer.cs">
+      <DependentUpon>frmDeletarDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasDisciplina\frmListarDisciplinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasDisciplina\frmListarDisciplinas.Designer.cs">
+      <DependentUpon>frmListarDisciplinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasProfessor\frmAtualizarProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasProfessor\frmAtualizarProfessor.Designer.cs">
+      <DependentUpon>frmAtualizarProfessor.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelasProfessor\frmCadastroProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +141,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="TelasAluno\formListaAlunos.resx">
-      <DependentUpon>formListaAlunos.cs</DependentUpon>
+    <Compile Include="TelasProfessor\frmDeletarProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasProfessor\frmDeletarProfessor.Designer.cs">
+      <DependentUpon>frmDeletarProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelasProfessor\frmListaProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelasProfessor\frmListaProfessor.Designer.cs">
+      <DependentUpon>frmListaProfessor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TelasAluno\frmDeletar.resx">
+      <DependentUpon>frmDeletar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasAluno\frmListaAlunos.resx">
+      <DependentUpon>frmListaAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasAluno\frmAtualizarAluno.resx">
+      <DependentUpon>frmAtualizarAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelasAluno\frmCadastroAluno.resx">
       <DependentUpon>frmCadastroAluno.cs</DependentUpon>
@@ -129,6 +183,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TelasDisciplina\frmAtualizarDisciplina.resx">
+      <DependentUpon>frmAtualizarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasDisciplina\frmCadastroDisciplina.resx">
+      <DependentUpon>frmCadastroDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasDisciplina\frmDeletarDisciplina.resx">
+      <DependentUpon>frmDeletarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasDisciplina\frmListarDisciplinas.resx">
+      <DependentUpon>frmListarDisciplinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasProfessor\frmAtualizarProfessor.resx">
+      <DependentUpon>frmAtualizarProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasProfessor\frmCadastroProfessor.resx">
+      <DependentUpon>frmCadastroProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasProfessor\frmDeletarProfessor.resx">
+      <DependentUpon>frmDeletarProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelasProfessor\frmListaProfessor.resx">
+      <DependentUpon>frmListaProfessor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

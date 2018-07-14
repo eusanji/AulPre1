@@ -101,7 +101,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroAluno";
             this.Text = "frmCadastroAluno";
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 
