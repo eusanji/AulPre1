@@ -75,6 +75,7 @@
             this.btnProcuraProfessor.TabIndex = 24;
             this.btnProcuraProfessor.Text = "Procurar por ID";
             this.btnProcuraProfessor.UseVisualStyleBackColor = true;
+            this.btnProcuraProfessor.Click += new System.EventHandler(this.btnProcuraProfessor_Click);
             // 
             // txtProfessorid
             // 
@@ -127,6 +128,7 @@
             this.btnAtualizarProfessor.TabIndex = 18;
             this.btnAtualizarProfessor.Text = "Atualizar";
             this.btnAtualizarProfessor.UseVisualStyleBackColor = true;
+            this.btnAtualizarProfessor.Click += new System.EventHandler(this.btnAtualizarProfessor_Click);
             // 
             // txtMatriculaAttProf
             // 

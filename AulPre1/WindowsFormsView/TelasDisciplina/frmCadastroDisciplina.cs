@@ -21,7 +21,7 @@ namespace WindowsFormsView.TelasDisciplina
 
         private void btnSalvarDisciplina_Click(object sender, EventArgs e)
         {
-            Disciplina nd = new Disciplina();
+           Disciplina nd = new Disciplina();
             nd.NomeD = txtDisciplina.Text;
             nd.CargaHoraria = int.Parse(txtCargaHorDisciplina.Text);
 
@@ -36,7 +36,7 @@ namespace WindowsFormsView.TelasDisciplina
 
         private void btnCancelarDisciplina_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirmar para limpar dados?", "Mensagem do sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
+          /**  if (MessageBox.Show("Confirmar para limpar dados?", "Mensagem do sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 txtDisciplina.Text = string.Empty;
                 txtCargaHorDisciplina.Text = string.Empty;
@@ -46,7 +46,7 @@ namespace WindowsFormsView.TelasDisciplina
             else
             {
                 MessageBox.Show("Continue seu cadastramento da Disciplina!", "Mensagem do sistema");
-            }
+            }**/
         }
     }
 }

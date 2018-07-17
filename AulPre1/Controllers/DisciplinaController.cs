@@ -35,6 +35,7 @@ namespace Controllers
             Disciplina disciplina = BuscarDiscID(iddisciplina);
             contextoD.Disciplinas.Remove(disciplina);
             contextoD.SaveChanges();
+    
         }
 
     }

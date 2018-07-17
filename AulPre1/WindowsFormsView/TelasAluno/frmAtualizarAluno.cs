@@ -26,17 +26,35 @@ namespace WindowsFormsView.TelasAluno
             idAluno.AlunoID = int.Parse(txtAlunoid.Text);
 
             AlunosController alunosController = new AlunosController();
-            alunosController.BuscarPorID(idAluno.AlunoID);
+            idAluno = alunosController.BuscarPorID(idAluno.AlunoID);
 
-            txtNomeAtt.Text = idAluno.Nome;
-           // txtMatriculaAtt.Text = int.Parse(idAluno.Matricula);
-
-            
-     
+            if (idAluno == null )
+            {                              
+                MessageBox.Show("ID não cadastrado, digitado: " + int.Parse(txtAlunoid.Text) + "\nO valor não pode ser Zero (0)" + "\nNumero digitado não pode estar negativo");
+            }
+            else if (idAluno.AlunoID >= 1)
+            {              
+                txtNomeAtt.Text = idAluno.Nome;
+                txtMatriculaAtt.Text = idAluno.Matricula.ToString();              
+            }            
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+
+            Aluno attAluno = new Aluno();
+            attAluno.AlunoID = int.Parse(txtAlunoid.Text);
+           
+            if (attAluno.AlunoID >= 1)  {                        
+                attAluno.Nome = txtNomeAtt.Text;
+                attAluno.Matricula = int.Parse(txtMatriculaAtt.Text);
+
+                AlunosController alunosController = new AlunosController();
+                alunosController.Atualizar(attAluno);
+                MessageBox.Show("Aluno atualizado com sucesso");
+                txtAlunoid.Clear(); txtNomeAtt.Clear(); txtMatriculaAtt.Clear();
+            }
+           
 
         }
 
@@ -47,14 +65,15 @@ namespace WindowsFormsView.TelasAluno
 
         private void btnProcuraMatricula_Click(object sender, EventArgs e)
         {   //Verificar
-            Aluno aluno = new Aluno();
-            aluno.Matricula = int.Parse(txtMatricula.Text);
+           Aluno matricula = new Aluno();
+           matricula.Matricula = int.Parse(txtMatricula.Text);
 
             AlunosController alunosController = new AlunosController();
-            alunosController.BuscarMatriculaAluno(aluno.Matricula);
+            matricula = alunosController.BuscarMatriculaAluno(matricula.Matricula);
 
-            txtNomeAtt.Text = aluno.Nome;
-            
+           txtNomeAtt.Text = matricula.Nome;
+           txtMatriculaAtt.Text = matricula.Matricula.ToString();
+    
             //Verificar
             
         }

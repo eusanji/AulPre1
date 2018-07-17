@@ -37,7 +37,7 @@ namespace WindowsFormsView.TelasProfessor
 
         private void btnCancelarProfessor_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirmar para limpar dados?", "Mensagem do sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
+           /** if (MessageBox.Show("Confirmar para limpar dados?", "Mensagem do sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 txtNomeProfessor.Text = string.Empty;
                 txtMatriculaProfessor.Text = string.Empty;
@@ -47,7 +47,7 @@ namespace WindowsFormsView.TelasProfessor
             else
             {
                 MessageBox.Show("Continue seu cadastramento do Professor!", "Mensagem do sistema");
-            }
+            }**/
         }
     }
 }

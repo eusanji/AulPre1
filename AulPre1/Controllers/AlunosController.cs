@@ -1,17 +1,13 @@
 ﻿using Controllers.DAL;
 using Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Controllers
 {
     public class AlunosController
     {
         Contexto contexto = new Contexto(); // Banco de dados 
-        //List<Aluno> tabelaAlunos = new List<Aluno>(); Valido somente para projeto anterior somente console
 
         public void Inserir(Aluno novoAluno)
         {
@@ -27,10 +23,11 @@ namespace Controllers
         public Aluno BuscarMatriculaAluno(int matricula)
         //usando LINQ
         {
-        var aluno = from a in contexto.Alunos
-                    where a.Matricula == matricula
-                    select a;
-        return (Aluno) aluno;
+            var aluno = from a in contexto.Alunos
+                        where a.Matricula == matricula
+                        select a;
+
+            return (Aluno)aluno;
         }
         public Aluno BuscarPorID (int idAluno)
         {
@@ -47,7 +44,7 @@ namespace Controllers
             contexto.Alunos.Remove(aluno);
             contexto.SaveChanges();
           
-            //tabelaAlunos.Remove(a); antigo
+            
         }
     }
     

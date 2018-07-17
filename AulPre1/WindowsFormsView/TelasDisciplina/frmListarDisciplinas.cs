@@ -20,7 +20,7 @@ namespace WindowsFormsView.TelasDisciplina
 
         private void frmListarDisciplinas_Load(object sender, EventArgs e)
         {
-            DisciplinaController disciplinaController = new DisciplinaController();
+           DisciplinaController disciplinaController = new DisciplinaController();
             dgvDisciplinas.DataSource = disciplinaController.ListarDisciplinas();
         }
     }
