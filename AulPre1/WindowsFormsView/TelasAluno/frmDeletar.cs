@@ -28,6 +28,7 @@ namespace WindowsFormsView.TelasAluno
 
             AlunosController alunosController = new AlunosController();
             alunosController.Excluir(del.AlunoID);
+            txtDeletar.Clear();
 
             MessageBox.Show("o Id:"+del.AlunoID);
         }

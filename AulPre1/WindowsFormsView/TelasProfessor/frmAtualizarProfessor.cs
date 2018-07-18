@@ -28,7 +28,7 @@ namespace WindowsFormsView.TelasProfessor
             pp = pc.BuscarProfID(pp.ProfessorID);
 
             txtNomeAttProf.Text = pp.NomeP.ToString();
-            txtMatriculaProf.Text= pp.MatriculaP.ToString();
+            txtMatriculaAttProf.Text= pp.MatriculaP.ToString();
 
         }
 
@@ -47,6 +47,11 @@ namespace WindowsFormsView.TelasProfessor
                 MessageBox.Show("Professor atualizado com sucesso");
                 txtProfessorid.Clear(); txtNomeAttProf.Clear(); txtMatriculaAttProf.Clear();
             }
+        }
+
+        private void btnCancelarAttProfessor_Click(object sender, EventArgs e)
+        {
+            txtNomeAttProf.Clear(); txtMatriculaAttProf.Clear();txtProfessorid.Clear();
         }
     }
 }

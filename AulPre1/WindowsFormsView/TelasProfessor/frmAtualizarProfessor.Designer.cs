@@ -119,6 +119,7 @@
             this.btnCancelarAttProfessor.TabIndex = 19;
             this.btnCancelarAttProfessor.Text = "Cancelar";
             this.btnCancelarAttProfessor.UseVisualStyleBackColor = true;
+            this.btnCancelarAttProfessor.Click += new System.EventHandler(this.btnCancelarAttProfessor_Click);
             // 
             // btnAtualizarProfessor
             // 

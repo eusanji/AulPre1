@@ -28,6 +28,7 @@ namespace WindowsFormsView.TelasProfessor
 
             ProfessoresController professoresController = new ProfessoresController();
             professoresController.ExcluirP(delP.ProfessorID);
+            txtDeletarProf.Clear();
 
             MessageBox.Show("o Id do professor:" + delP.ProfessorID);
         }

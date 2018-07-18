@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btnProcuraDisciplina = new System.Windows.Forms.Button();
-            this.txtAlunoid = new System.Windows.Forms.TextBox();
+            this.txtDisciplinaID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelarAttDisciplina = new System.Windows.Forms.Button();
             this.btnAtualizarDisciplina = new System.Windows.Forms.Button();
-            this.txtMatriculaAtt = new System.Windows.Forms.TextBox();
+            this.txtCargaHorariaAtt = new System.Windows.Forms.TextBox();
             this.txtDisciplinaAtt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -49,12 +49,12 @@
             this.btnProcuraDisciplina.UseVisualStyleBackColor = true;
             this.btnProcuraDisciplina.Click += new System.EventHandler(this.btnProcuraDisciplina_Click);
             // 
-            // txtAlunoid
+            // txtDisciplinaID
             // 
-            this.txtAlunoid.Location = new System.Drawing.Point(116, 12);
-            this.txtAlunoid.Name = "txtAlunoid";
-            this.txtAlunoid.Size = new System.Drawing.Size(59, 20);
-            this.txtAlunoid.TabIndex = 23;
+            this.txtDisciplinaID.Location = new System.Drawing.Point(116, 12);
+            this.txtDisciplinaID.Name = "txtDisciplinaID";
+            this.txtDisciplinaID.Size = new System.Drawing.Size(59, 20);
+            this.txtDisciplinaID.TabIndex = 23;
             // 
             // label3
             // 
@@ -103,12 +103,12 @@
             this.btnAtualizarDisciplina.UseVisualStyleBackColor = true;
             this.btnAtualizarDisciplina.Click += new System.EventHandler(this.btnAtualizarDisciplina_Click);
             // 
-            // txtMatriculaAtt
+            // txtCargaHorariaAtt
             // 
-            this.txtMatriculaAtt.Location = new System.Drawing.Point(83, 110);
-            this.txtMatriculaAtt.Name = "txtMatriculaAtt";
-            this.txtMatriculaAtt.Size = new System.Drawing.Size(214, 20);
-            this.txtMatriculaAtt.TabIndex = 17;
+            this.txtCargaHorariaAtt.Location = new System.Drawing.Point(83, 110);
+            this.txtCargaHorariaAtt.Name = "txtCargaHorariaAtt";
+            this.txtCargaHorariaAtt.Size = new System.Drawing.Size(214, 20);
+            this.txtCargaHorariaAtt.TabIndex = 17;
             // 
             // txtDisciplinaAtt
             // 
@@ -123,13 +123,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 210);
             this.Controls.Add(this.btnProcuraDisciplina);
-            this.Controls.Add(this.txtAlunoid);
+            this.Controls.Add(this.txtDisciplinaID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelarAttDisciplina);
             this.Controls.Add(this.btnAtualizarDisciplina);
-            this.Controls.Add(this.txtMatriculaAtt);
+            this.Controls.Add(this.txtCargaHorariaAtt);
             this.Controls.Add(this.txtDisciplinaAtt);
             this.Name = "frmAtualizarDisciplina";
             this.Text = "frmAtualizarDisciplina";
@@ -141,13 +141,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnProcuraDisciplina;
-        private System.Windows.Forms.TextBox txtAlunoid;
+        private System.Windows.Forms.TextBox txtDisciplinaID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelarAttDisciplina;
         private System.Windows.Forms.Button btnAtualizarDisciplina;
-        private System.Windows.Forms.TextBox txtMatriculaAtt;
+        private System.Windows.Forms.TextBox txtCargaHorariaAtt;
         private System.Windows.Forms.TextBox txtDisciplinaAtt;
     }
 }

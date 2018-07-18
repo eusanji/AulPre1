@@ -20,12 +20,12 @@ namespace WindowsFormsView.TelasAluno
                 txtMatricula.Text = string.Empty;
                 MessageBox.Show("Dados limpos com sucesso!");
 
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("Continue seu cadastramento de Aluno!", "Mensagem do sistema");
             }
-           
 
-            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -41,10 +41,8 @@ namespace WindowsFormsView.TelasAluno
             txtMatricula.Text = string.Empty;
 
             MessageBox.Show("Aluno Cadastrado com sucesso");
-
-
-
+            
         }
-                
+
     }
 }

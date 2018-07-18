@@ -21,24 +21,44 @@ namespace WindowsFormsView.TelasDisciplina
 
         private void btnProcuraDisciplina_Click(object sender, EventArgs e)
         {
-            Disciplina DisciplinaId = new Disciplina();
-            DisciplinaId.DisciplinaID = int.Parse(txtDisciplinaAtt.Text);
+            Disciplina idDisciplina = new Disciplina();
+            idDisciplina.DisciplinaID = int.Parse(txtDisciplinaID.Text);
 
-            DisciplinaController dc= new DisciplinaController();
-            DisciplinaId = disciplinaControlle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                r.BuscarDiscID(DisciplinaId.DisciplinaID);
+            DisciplinaController dc = new DisciplinaController();
+            idDisciplina = dc.BuscarDiscID(idDisciplina.DisciplinaID);
+            if (idDisciplina == null)
+            {
+                MessageBox.Show("Identificação da disciplina não existe, \n não pode ser 0 ou Negativo");
+            }
+            else if (idDisciplina.DisciplinaID >= 1)
+            {
+                txtDisciplinaAtt.Text = idDisciplina.NomeD;
+                txtCargaHorariaAtt.Text = idDisciplina.CargaHoraria.ToString();
+            }
 
-            txtDisciplinaAtt.Text = DisciplinaId.NomeD;
-            txtMatriculaAtt.Text = int.Parse(idAluno.Matricula);**/
         }
 
         private void btnAtualizarDisciplina_Click(object sender, EventArgs e)
         {
+            Disciplina disciplina = new Disciplina();
+            disciplina.DisciplinaID = int.Parse(txtDisciplinaID.Text);
 
+            if (disciplina.DisciplinaID >= 1)
+            {
+                disciplina.NomeD = txtDisciplinaAtt.Text;
+                disciplina.CargaHoraria = int.Parse(txtCargaHorariaAtt.Text);
+                
+
+              DisciplinaController dc = new DisciplinaController();
+              dc.AtualizarD(disciplina);
+              MessageBox.Show("Disciplina atualizada");
+              txtDisciplinaID.Clear(); txtDisciplinaAtt.Clear(); txtCargaHorariaAtt.Clear();
+            }
         }
 
         private void btnCancelarAttDisciplina_Click(object sender, EventArgs e)
         {
-
+            txtDisciplinaID.Clear(); txtCargaHorariaAtt.Clear();txtDisciplinaAtt.Clear();
         }
     }
 }

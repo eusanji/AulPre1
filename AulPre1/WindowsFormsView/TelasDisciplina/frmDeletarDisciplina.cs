@@ -28,6 +28,7 @@ namespace WindowsFormsView.TelasDisciplina
 
             DisciplinaController disciplinasController = new DisciplinaController();
             disciplinasController.ExcluirD(delD.DisciplinaID);
+            txtDeletarDisciplina.Clear();
 
             MessageBox.Show("o Id:" + delD.DisciplinaID);
         }
